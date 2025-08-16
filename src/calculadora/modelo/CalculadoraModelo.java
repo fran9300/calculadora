@@ -78,12 +78,6 @@ public class CalculadoraModelo {
 	        	operadorPendiente = operador;
 	        	esInicioDeNuevaEntrada = true;
 	        	return FORMATO_DECIMAL.format(acumuladorResultado);
-	            /*
-	            if (acumuladorResultado == (long) acumuladorResultado) {
-	                return String.valueOf((long) acumuladorResultado);
-	            } else {
-	                return String.valueOf(acumuladorResultado);
-	            }*/
 
 	        } catch (NumberFormatException ex) {
 	            return "Error";
@@ -126,12 +120,6 @@ public class CalculadoraModelo {
 	            esInicioDeNuevaEntrada = true;
 	            return FORMATO_DECIMAL.format(acumuladorResultado);
 	            
-	            /*
-	            if (acumuladorResultado == (long) acumuladorResultado) {
-	                return String.valueOf((long) acumuladorResultado);
-	            } else {
-	                return String.valueOf(acumuladorResultado);
-	            }*/
 	        } catch (ArithmeticException | IllegalArgumentException ex) {
 	            resetear();
 	            return TEXTO_ERROR;
