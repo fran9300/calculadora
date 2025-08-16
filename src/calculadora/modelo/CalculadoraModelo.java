@@ -1,5 +1,7 @@
 package calculadora.modelo;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.BiFunction;
@@ -13,6 +15,13 @@ public class CalculadoraModelo {
 	    private String operadorPendiente;
 	    private String TEXTO_ERROR = "Error";
 	    private Map<String, BiFunction<Double, Double, Double>> operaciones;
+	    private static final DecimalFormat FORMATO_DECIMAL;
+	    
+	    static {
+	        DecimalFormatSymbols symbols = new DecimalFormatSymbols();
+	        symbols.setDecimalSeparator('.');
+	        FORMATO_DECIMAL = new DecimalFormat("#.######", symbols);
+	    }
 
 	    public CalculadoraModelo() {
 	        this.operaciones = new HashMap<>();
@@ -68,12 +77,13 @@ public class CalculadoraModelo {
 
 	        	operadorPendiente = operador;
 	        	esInicioDeNuevaEntrada = true;
-	            
+	        	return FORMATO_DECIMAL.format(acumuladorResultado);
+	            /*
 	            if (acumuladorResultado == (long) acumuladorResultado) {
 	                return String.valueOf((long) acumuladorResultado);
 	            } else {
 	                return String.valueOf(acumuladorResultado);
-	            }
+	            }*/
 
 	        } catch (NumberFormatException ex) {
 	            return "Error";
@@ -114,12 +124,14 @@ public class CalculadoraModelo {
 	                    .apply(acumuladorResultado, segundoNumero);
 
 	            esInicioDeNuevaEntrada = true;
-
+	            return FORMATO_DECIMAL.format(acumuladorResultado);
+	            
+	            /*
 	            if (acumuladorResultado == (long) acumuladorResultado) {
 	                return String.valueOf((long) acumuladorResultado);
 	            } else {
 	                return String.valueOf(acumuladorResultado);
-	            }
+	            }*/
 	        } catch (ArithmeticException | IllegalArgumentException ex) {
 	            resetear();
 	            return TEXTO_ERROR;

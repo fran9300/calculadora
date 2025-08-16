@@ -24,7 +24,7 @@ public class CalculadoraControlador implements ActionListener {
 
         if (comando.equals("C")) {
             modelo.resetear();
-            vista.setDisplayText("");
+            vista.setDisplayText("0");
         } else if (comando.matches("[0-9]")) {
             String nuevoTexto = modelo.manejarNumero(comando, displayActual);
             vista.setDisplayText(nuevoTexto);

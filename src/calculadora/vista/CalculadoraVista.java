@@ -27,7 +27,7 @@ public class CalculadoraVista {
         display.setFont(new Font("Arial", Font.BOLD, 48));
         display.setHorizontalAlignment(JTextField.RIGHT);
         display.setEditable(false);
-        display.setBackground(new Color(220, 255, 220));
+        display.setBackground(new Color(255, 255, 222));
         
         frame.add(display, BorderLayout.NORTH);
 
@@ -55,15 +55,15 @@ public class CalculadoraVista {
             
             
             if (texto.matches("[0-9]|\\.")) {
-                boton.setBackground(new Color(240, 240, 240)); 
+                boton.setBackground(new Color(240, 240, 222)); 
             } else if (texto.matches("[+\\-*/]")) {
-                boton.setBackground(new Color(255, 150, 0)); 
+                boton.setBackground(new Color(255, 153, 51)); 
                 boton.setForeground(Color.WHITE);
             } else if (texto.equals("=")) {
-                boton.setBackground(new Color(0, 150, 255)); 
+                boton.setBackground(new Color(102, 153, 255)); 
                 boton.setForeground(Color.WHITE);
             } else if (texto.equals("C")) {
-                boton.setBackground(new Color(200, 50, 50)); 
+                boton.setBackground(new Color(255, 51, 51)); 
                 boton.setForeground(Color.WHITE);
             }
             
