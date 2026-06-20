@@ -1,6 +1,6 @@
 # Calculator Java
 
-Simple calculator application developed in Java using the MVC (Model-View-Controller) architecture.
+Java Swing calculator application implementing MVC (Model-View-Controller) architecture.
 
 The project implements a graphical user interface with Java Swing and separates the business logic, user interface, and event handling into different layers.
 
