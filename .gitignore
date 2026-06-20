@@ -1,0 +1,21 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Java compilado
+*.class
+bin/
+out/
+target/
+
+# Logs
+*.log
+
+# Sistema
+.DS_Store
+Thumbs.db
